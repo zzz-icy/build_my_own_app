@@ -98,7 +98,7 @@ class Notesform extends React.Component {
             label="Content"
             id="bootstrap-input"
             multiLine
-            rows={2}
+            rows={4}
             fullWidth
             InputProps={{
               disableUnderline: true,
