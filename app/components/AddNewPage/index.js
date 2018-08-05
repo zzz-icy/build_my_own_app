@@ -37,15 +37,24 @@ const styles = {
 
 function AddNewPage(props) {
   const { classes } = props;
+  // onClick = () => {
 
+  // };
   return (
     <div>
       <div className={classes.list}>
         <H1>Welcome</H1>
         <div>Bla Bla Bla Bla Bla Bla Bla Bla</div>
-        <Button variant="contained" color="primary" className={classes.button}>
+        {/* <Link to="/add" > */}
+        <Button
+          href="/add"
+          variant="contained"
+          color="primary"
+          className={classes.button}
+        >
           Add New Note
         </Button>
+        {/* </Link> */}
       </div>
     </div>
   );

@@ -9,9 +9,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+// import RestoreIcon from '@material-ui/icons/Restore';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import LocationOnIcon from '@material-ui/icons/LocationOn';
+import MusicNote from '@material-ui/icons/MusicNote';
 
 const styles = {
   root: {
@@ -48,25 +49,32 @@ class Footer extends React.Component {
         className={classes.root}
       >
         <BottomNavigationAction
-          label="La"
+          label="Do"
           classes={{
             label: classes.label,
           }}
-          icon={<RestoreIcon className={classes.icon} />}
+          icon={<MusicNote className={classes.icon} />}
         />
         <BottomNavigationAction
-          label="LaLa"
+          label="Re"
           classes={{
             label: classes.label,
           }}
-          icon={<FavoriteIcon className={classes.icon} />}
+          icon={<MusicNote className={classes.icon} />}
         />
         <BottomNavigationAction
-          label="LaLaLa"
+          label="Mi"
           classes={{
             label: classes.label,
           }}
-          icon={<LocationOnIcon className={classes.icon} />}
+          icon={<MusicNote className={classes.icon} />}
+        />
+        <BottomNavigationAction
+          label="Fa"
+          classes={{
+            label: classes.label,
+          }}
+          icon={<MusicNote className={classes.icon} />}
         />
       </BottomNavigation>
     );

@@ -93,7 +93,7 @@ class Notesform extends React.Component {
           />
           <TextField
             value={this.state.content}
-            placeholder="Type in your note content"
+            placeholder="Note content"
             onChange={this.handleChange('content')}
             label="Content"
             id="bootstrap-input"

@@ -19,7 +19,8 @@ import React from 'react';
 //   makeSelectLoading,
 //   makeSelectError,
 // } from 'containers/App/selectors';
-import Notesform from 'components/Notesform';
+import Notes from 'components/Notes';
+import AddNewPage from 'components/AddNewPage';
 // import H2 from 'components/H2';
 // import ReposList from 'components/ReposList';
 // import AtPrefix from './AtPrefix';
@@ -44,7 +45,9 @@ export class HomePage extends React.PureComponent {
   //     this.props.onSubmitForm();
   //   }
   // }
-
+  state = {
+    notes: '',
+  };
   render() {
     // const { loading, error, repos } = this.props;
     // const reposListProps = {
@@ -53,7 +56,7 @@ export class HomePage extends React.PureComponent {
     //   repos,
     // };
 
-    return <Notesform />;
+    return this.state.notes === '' ? <AddNewPage /> : <Notes />;
   }
 }
 // HomePage.propTypes = {
