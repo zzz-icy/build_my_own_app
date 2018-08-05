@@ -3,7 +3,6 @@ import React from 'react';
 
 // import A from 'components/A';
 // import LocaleToggle from 'containers/LocaleToggle';
-// import Wrapper from './Wrapper';
 // import messages from './messages';
 
 import PropTypes from 'prop-types';
@@ -18,6 +17,7 @@ const styles = {
   root: {
     width: 'flex',
     background: '#3f51b5',
+    boxShadow: '2px 2px 1px grey',
   },
   label: {
     color: 'white',
