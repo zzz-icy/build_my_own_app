@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 // import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
@@ -32,6 +33,10 @@ const styles = {
     background: '#eceef8',
     marginTop: 30,
     marginBottom: 30,
+  },
+  button: {
+    width: 'calc(100% - 550px)',
+    marginBottom: 20,
   },
   bootstrapRoot: {
     padding: 0,
@@ -108,6 +113,9 @@ class Notesform extends React.Component {
             }}
           />
         </div>
+        <Button variant="contained" color="primary" className={classes.button}>
+          Submit
+        </Button>
       </div>
     );
   }
