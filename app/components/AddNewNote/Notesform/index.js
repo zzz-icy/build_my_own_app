@@ -23,6 +23,16 @@ const styles = {
     marginTop: 30,
     marginBottom: 30,
   },
+  btngroup: {
+    display: 'flex',
+    // justifyContent: 'space-between',
+    width: '100%',
+    height: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 30,
+    marginBottom: 30,
+  },
   list: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -35,8 +45,9 @@ const styles = {
     marginBottom: 30,
   },
   button: {
-    width: 'calc(100% - 550px)',
+    width: 'calc(100% - 500px)',
     marginBottom: 20,
+    marginLeft: 50,
   },
   bootstrapRoot: {
     padding: 0,
@@ -73,6 +84,7 @@ class Notesform extends React.Component {
       [name]: event.target.value,
     });
   };
+  // onCancel = () => { };
   render() {
     const { classes } = this.props;
     return (
@@ -113,9 +125,22 @@ class Notesform extends React.Component {
             }}
           />
         </div>
-        <Button variant="contained" color="primary" className={classes.button}>
-          Submit
-        </Button>
+        <div claaName={classes.btngroup}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Submit
+          </Button>
+        </div>
       </div>
     );
   }

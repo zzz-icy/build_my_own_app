@@ -1,6 +1,6 @@
 /**
  *
- * AddNewPage
+ * AddNewNote
  *
  */
 
@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 
 import H1 from 'components/H1';
 import Button from '@material-ui/core/Button';
+import Notesform from 'components/AddNewNote/Notesform';
 // import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
 import { withStyles } from '@material-ui/core/styles';
@@ -19,6 +20,7 @@ const styles = {
     marginTop: 30,
     marginBottom: 30,
   },
+
   input: {
     display: 'none',
   },
@@ -35,33 +37,41 @@ const styles = {
   },
 };
 
-function AddNewPage(props) {
-  const { classes } = props;
-  // onClick = () => {
+/* eslint-disable react/prefer-stateless-function */
+export class AddNewNote extends React.Component {
+  state = {
+    viewForm: false,
+  };
 
-  // };
-  return (
-    <div>
+  onClick = () => {
+    this.setState({ viewForm: true });
+  };
+  render() {
+    const { classes } = this.props;
+    const { viewForm } = this.state;
+
+    if (viewForm) {
+      return <Notesform />;
+    }
+    return (
       <div className={classes.list}>
         <H1>Welcome</H1>
         <div>Bla Bla Bla Bla Bla Bla Bla Bla</div>
-        {/* <Link to="/add" > */}
         <Button
-          href="/add"
           variant="contained"
           color="primary"
           className={classes.button}
+          onClick={this.onClick}
         >
           Add New Note
         </Button>
-        {/* </Link> */}
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-AddNewPage.propTypes = {
+AddNewNote.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AddNewPage);
+export default withStyles(styles)(AddNewNote);

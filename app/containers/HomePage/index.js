@@ -19,8 +19,9 @@ import React from 'react';
 //   makeSelectLoading,
 //   makeSelectError,
 // } from 'containers/App/selectors';
-import Notes from 'components/Notes';
-import AddNewPage from 'components/AddNewPage';
+import { Redirect } from 'react-router-dom';
+// import NotesPage from 'containers/NotesPage/Loadable';
+import AddNewNote from 'components/AddNewNote';
 // import H2 from 'components/H2';
 // import ReposList from 'components/ReposList';
 // import AtPrefix from './AtPrefix';
@@ -34,7 +35,6 @@ import AddNewPage from 'components/AddNewPage';
 // import { makeSelectUsername } from './selectors';
 // import reducer from './reducer';
 // import saga from './saga';
-
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
   /**
@@ -56,7 +56,7 @@ export class HomePage extends React.PureComponent {
     //   repos,
     // };
 
-    return this.state.notes === '' ? <AddNewPage /> : <Notes />;
+    return this.state.notes === '' ? <AddNewNote /> : <Redirect to="/notes" />;
   }
 }
 // HomePage.propTypes = {
