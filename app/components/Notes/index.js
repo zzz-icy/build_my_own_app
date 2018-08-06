@@ -27,13 +27,17 @@ const styles = theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  panel: {
+    marginTop: 10,
+    marginBottom: 10,
+  },
   list: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    // display: 'flex',
+    // justifyContent: 'space-between',
     width: '100%',
-    height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
+    // height: '100%',
+    // flexDirection: 'column',
+    // alignItems: 'center',
     // background: '#e6e6e6',
     marginTop: 30,
     marginBottom: 30,
@@ -42,32 +46,25 @@ const styles = theme => ({
 
 class Notes extends React.Component {
   render() {
-    const { classes } = this.props;
-
+    const { classes, notes } = this.props;
+    // const notes = this.props.notes;
+    // console.log(notes);
     return (
       <div className={classes.list}>
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Note 1</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacusex, sit amet blandit leo lobortis eget.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}> Note 2 </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacusex, sit amet blandit leo lobortis eget.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        {notes.notes.map(item => (
+          <div>
+            <ExpansionPanel className={classes.panel}>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography className={classes.heading}>
+                  {item.note_title}
+                </Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>{item.note_content}</Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+          </div>
+        ))}
       </div>
     );
   }
@@ -75,6 +72,7 @@ class Notes extends React.Component {
 
 Notes.propTypes = {
   classes: PropTypes.object.isRequired,
+  notes: PropTypes.any,
 };
 
 export default withStyles(styles)(Notes);
