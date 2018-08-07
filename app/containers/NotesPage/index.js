@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 // import { FormattedMessage } from 'react-intl';
@@ -29,31 +29,31 @@ import saga from './saga';
 // componentDidMount() {
 //   if (!this.props.notes) { this.props.onLoadingNotes(); }
 // }
-// const notes = {
-//   notes: [
-//     {
-//       id: 1,
-//       note_title: 'Note 1',
-//       note_content: 'This is Note 1',
-//     },
-//     {
-//       id: 2,
-//       note_title: 'Note 2',
-//       note_content: 'This is Note 2',
-//     },
-//     {
-//       id: 3,
-//       note_title: 'Note 3',
-//       note_content: 'This is Note 3',
-//     },
-//   ],
-// };
+const notes = {
+  notes: [
+    {
+      id: 1,
+      note_title: 'Note 1',
+      note_content: 'This is Note 1',
+    },
+    {
+      id: 2,
+      note_title: 'Note 2',
+      note_content: 'This is Note 2',
+    },
+    {
+      id: 3,
+      note_title: 'Note 3',
+      note_content: 'This is Note 3',
+    },
+  ],
+};
 
 /* eslint-disable react/prefer-stateless-function */
 export class NotesPage extends React.Component {
   render() {
     const notesProps = {
-      notes: this.props.notes,
+      notes,
     };
     console.log(notesProps);
     return (
@@ -69,7 +69,7 @@ export class NotesPage extends React.Component {
 }
 
 NotesPage.propTypes = {
-  notes: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  // notes: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
 };
 
 const mapStateToProps = createStructuredSelector({

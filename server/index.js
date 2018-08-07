@@ -1,6 +1,6 @@
 /* eslint consistent-return:0 */
 
-const express = require('express');
+const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -12,11 +12,13 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
-const app = express();
+const app = express(); // create express app
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
-
+app.get('/', (req, res) => {
+  res.send({ hi: 'there' });
+});
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),

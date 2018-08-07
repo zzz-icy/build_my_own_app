@@ -60,12 +60,12 @@ export class HomePage extends React.PureComponent {
   }
 }
 // HomePage.propTypes = {
-// loading: PropTypes.bool,
-// error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-// repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-// onSubmitForm: PropTypes.func,
-// username: PropTypes.string,
-// onChangeUsername: PropTypes.func,
+//   loading: PropTypes.bool,
+//   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+//   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+//   onSubmitForm: PropTypes.func,
+//   username: PropTypes.string,
+//   onChangeUsername: PropTypes.func,
 // };
 
 // export function mapDispatchToProps(dispatch) {

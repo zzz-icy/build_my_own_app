@@ -6,7 +6,7 @@
 
 import { LOAD_NOTES, LOAD_NOTES_SUCCESS, LOAD_NOTES_ERROR } from './constants';
 
-export function notesLoading() {
+export function loadNotes() {
   return {
     type: LOAD_NOTES,
   };
