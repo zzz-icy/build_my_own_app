@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 // import { FormattedMessage } from 'react-intl';
@@ -15,37 +15,47 @@ import Notes from 'components/Notes';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectNotesPage from './selectors';
+import {
+  makeSelectNotesPage,
+  makeSelectNotes,
+  makeSelectError,
+  makeSelectLoading,
+} from './selectors';
+import { loadNotes } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 // import messages from './messages';
 
-const notes = {
-  notes: [
-    {
-      id: 1,
-      note_title: 'Note 1',
-      note_content: 'This is Note 1',
-    },
-    {
-      id: 2,
-      note_title: 'Note 2',
-      note_content: 'This is Note 2',
-    },
-    {
-      id: 3,
-      note_title: 'Note 3',
-      note_content: 'This is Note 3',
-    },
-  ],
-};
+// componentDidMount() {
+//   if (!this.props.notes) { this.props.onLoadingNotes(); }
+// }
+// const notes = {
+//   notes: [
+//     {
+//       id: 1,
+//       note_title: 'Note 1',
+//       note_content: 'This is Note 1',
+//     },
+//     {
+//       id: 2,
+//       note_title: 'Note 2',
+//       note_content: 'This is Note 2',
+//     },
+//     {
+//       id: 3,
+//       note_title: 'Note 3',
+//       note_content: 'This is Note 3',
+//     },
+//   ],
+// };
 
 /* eslint-disable react/prefer-stateless-function */
 export class NotesPage extends React.Component {
   render() {
     const notesProps = {
-      notes,
+      notes: this.props.notes,
     };
+    console.log(notesProps);
     return (
       <div>
         <Helmet>
@@ -59,16 +69,19 @@ export class NotesPage extends React.Component {
 }
 
 NotesPage.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
+  notes: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
 };
 
 const mapStateToProps = createStructuredSelector({
   notespage: makeSelectNotesPage(),
+  notes: makeSelectNotes(),
+  error: makeSelectError(),
+  loading: makeSelectLoading(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    onLoadingNotes: () => dispatch(loadNotes()),
   };
 }
 

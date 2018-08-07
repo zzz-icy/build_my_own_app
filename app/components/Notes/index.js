@@ -48,7 +48,8 @@ class Notes extends React.Component {
   render() {
     const { classes, notes } = this.props;
     // const notes = this.props.notes;
-    // console.log(notes);
+    console.log(notes);
+    if (!notes) return null;
     return (
       <div className={classes.list}>
         {notes.notes.map(item => (

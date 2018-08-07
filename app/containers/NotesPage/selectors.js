@@ -18,5 +18,16 @@ const selectNotesPageDomain = state => state.get('notesPage', initialState);
 const makeSelectNotesPage = () =>
   createSelector(selectNotesPageDomain, substate => substate.toJS());
 
-export default makeSelectNotesPage;
-export { selectNotesPageDomain };
+const makeSelectNotes = () =>
+  createSelector(selectNotesPageDomain, substate => substate.get('notes'));
+const makeSelectError = () =>
+  createSelector(selectNotesPageDomain, substate => substate.get('error'));
+const makeSelectLoading = () =>
+  createSelector(selectNotesPageDomain, substate => substate.get('loading'));
+// export default makeSelectNotesPage;
+export {
+  makeSelectNotesPage,
+  makeSelectNotes,
+  makeSelectError,
+  makeSelectLoading,
+};

@@ -4,10 +4,24 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { LOAD_NOTES, LOAD_NOTES_SUCCESS, LOAD_NOTES_ERROR } from './constants';
 
-export function defaultAction() {
+export function notesLoading() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_NOTES,
+  };
+}
+
+export function notesLoaded(notes) {
+  return {
+    type: LOAD_NOTES_SUCCESS,
+    notes,
+  };
+}
+
+export function notesLoadingError(err) {
+  return {
+    type: LOAD_NOTES_ERROR,
+    err,
   };
 }
