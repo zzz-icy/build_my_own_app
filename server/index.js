@@ -1,6 +1,9 @@
 /* eslint consistent-return:0 */
 
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./config/keys'); // actually .js the extesion is nt needed here
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -14,11 +17,28 @@ const ngrok =
 const { resolve } = require('path');
 const app = express(); // create express app
 
+// Authentication
+// console.developers.google.com
+passport.use(
+  new GoogleStrategy(
+    // first argument, some congifuration options
+    {
+      clientID: keys.googleClientID,
+      clientSecrete: keys.googleClientSecret,
+      callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL
+    },
+  ),
+  // second argument, callback
+  accessToken => {
+    console.log(accessToken);
+  },
+);
+// tell express to involve passport when people go to this route
+app.get('/auth/google', passport.authenticate('google'));
+
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
-app.get('/', (req, res) => {
-  res.send({ hi: 'there haha' });
-});
+
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),
