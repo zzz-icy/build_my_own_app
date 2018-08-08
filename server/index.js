@@ -17,7 +17,7 @@ const app = express(); // create express app
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 app.get('/', (req, res) => {
-  res.send({ hi: 'there' });
+  res.send({ hi: 'there haha' });
 });
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
