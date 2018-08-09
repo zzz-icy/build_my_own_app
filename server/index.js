@@ -27,14 +27,19 @@ passport.use(
       clientSecrete: keys.googleClientSecret,
       callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL
     },
+    // second argument, callback
+    accessToken => {
+      console.log(accessToken);
+    },
   ),
-  // second argument, callback
-  accessToken => {
-    console.log(accessToken);
-  },
 );
-// tell express to involve passport when people go to this route
-app.get('/auth/google', passport.authenticate('google'));
+// tell express to involve passport when people go to this route, then user will be kicked to the oauth flow handled by passport
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email'], // google has a list of specific pieces that can be asked for from user account
+  }),
+);
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
