@@ -3,7 +3,7 @@
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys'); // actually .js the extesion is nt needed here
+const keys = require('./config/keys.js'); // actually .js the extesion is nt needed here
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -24,12 +24,14 @@ passport.use(
     // first argument, some congifuration options
     {
       clientID: keys.googleClientID,
-      clientSecrete: keys.googleClientSecret,
+      clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL
     },
-    // second argument, callback
-    accessToken => {
-      console.log(accessToken);
+    // second argument, callback function, accessToken will be printed
+    (accessToken, refreshToken, profile) => {
+      console.log('access token', accessToken);
+      console.log('refresh token', refreshToken);
+      console.log('profile:', profile);
     },
   ),
 );
@@ -40,6 +42,9 @@ app.get(
     scope: ['profile', 'email'], // google has a list of specific pieces that can be asked for from user account
   }),
 );
+
+// passport will know the code, the second argument is not some logic that we ahve to write ourselves to handle that request, passport will take care of that
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
