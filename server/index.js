@@ -1,11 +1,9 @@
 /* eslint consistent-return:0 */
 
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys.js'); // actually .js the extesion is nt needed here
+require('./services/passport'); // just require, make sure it will be executed
+const authRoutes = require('./routes/authRoutes');
 const logger = require('./logger');
-
 const argv = require('./argv');
 const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
@@ -17,34 +15,8 @@ const ngrok =
 const { resolve } = require('path');
 const app = express(); // create express app
 
-// Authentication
-// console.developers.google.com
-passport.use(
-  new GoogleStrategy(
-    // first argument, some congifuration options
-    {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL
-    },
-    // second argument, callback function, accessToken will be printed
-    (accessToken, refreshToken, profile) => {
-      console.log('access token', accessToken);
-      console.log('refresh token', refreshToken);
-      console.log('profile:', profile);
-    },
-  ),
-);
-// tell express to involve passport when people go to this route, then user will be kicked to the oauth flow handled by passport
-app.get(
-  '/auth/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email'], // google has a list of specific pieces that can be asked for from user account
-  }),
-);
-
-// passport will know the code, the second argument is not some logic that we ahve to write ourselves to handle that request, passport will take care of that
-app.get('/auth/google/callback', passport.authenticate('google'));
+authRoutes(app); // pay attention to how to use app here for the authRoutes part
+// we can also do require('./routes/authRoutes')(app);
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
