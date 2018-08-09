@@ -2,7 +2,7 @@
 
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
 require('./services/passport'); // just require, make sure it will be executed
-const authRoutes = require('./routes/authRoutes');
+// const authRoutes = require('./routes/authRoutes');
 const logger = require('./logger');
 const argv = require('./argv');
 const port = require('./port');
@@ -15,7 +15,7 @@ const ngrok =
 const { resolve } = require('path');
 const app = express(); // create express app
 
-authRoutes(app); // pay attention to how to use app here for the authRoutes part
+require('./routes/authRoutes')(app); // pay attention to how to use app here for the authRoutes part
 // we can also do require('./routes/authRoutes')(app);
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here

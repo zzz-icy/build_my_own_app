@@ -1,7 +1,7 @@
 const passport = require('passport');
 /* eslint-disable indent */
 // prettier-ignore
-module.export = app => {
+module.exports = app => {  // exports as a function
     app.get(
         '/auth/google',
         passport.authenticate('google', {
