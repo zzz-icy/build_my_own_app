@@ -19,6 +19,7 @@ const styles = {
     width: 'flex',
     background: '#3f51b5',
     boxShadow: '2px 2px 1px grey',
+    flex: 1,
   },
   label: {
     color: 'white',
