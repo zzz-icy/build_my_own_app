@@ -19,14 +19,14 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
-const styles = theme => ({
+const styles = () => ({
   root: {
     width: '100%',
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
+  // heading: {
+  //   fontSize: theme.typography.pxToRem(15),
+  //   fontWeight: theme.typography.fontWeightRegular,
+  // },
   panel: {
     marginTop: 10,
     marginBottom: 10,
@@ -48,7 +48,7 @@ class Notes extends React.Component {
   render() {
     const { classes, notes } = this.props;
     // const notes = this.props.notes;
-    console.log(notes);
+    // console.log(notes);
     if (!notes) return null;
     return (
       <div className={classes.list}>

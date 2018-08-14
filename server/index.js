@@ -1,9 +1,16 @@
 /* eslint consistent-return:0 */
 
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
+
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+
+// Got this error MissingSchemaError: Schema hasn't been registered for model "users".
+// because we the wrong order of require statements
+// very fine frain detail
+require('./models/User'); // ensure whenever our app first boots up, all this configurations will load
 require('./services/passport'); // just require, make sure it will be executed
+
 // const authRoutes = require('./routes/authRoutes');
 const logger = require('./logger');
 const argv = require('./argv');
