@@ -32,7 +32,7 @@ passport.serializeUser((user, done) => {
 // prettier-ignore
 passport.deserializeUser((id, done) => {
     User.findById(id)
-        .then(user => {
+        .then(user => { // remember whenenver we 
             done(null, user);
         });
 });
@@ -47,7 +47,8 @@ passport.use(
         {
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
-            callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL
+            callbackURL: '/auth/google/callback', // after user grant permission to our app, the user will be redirect to thsi URL, a relative path which cause google think redirect to http not https
+            proxy: true, // one to solve it
         },
 
         // second argument, callback function, accessToken will be printed
