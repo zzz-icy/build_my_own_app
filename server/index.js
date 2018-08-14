@@ -3,6 +3,8 @@
 const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
 
 const mongoose = require('mongoose');
+const cookieSession = require('cookie-session'); // to have access to cookies
+const passport = require('passport'); // tell passport to make use of cookies
 const keys = require('./config/keys');
 
 // Got this error MissingSchemaError: Schema hasn't been registered for model "users".
@@ -33,6 +35,15 @@ mongoose.connect(keys.mongoURI);
 
 const app = express(); // create express app
 
+// tell express to use cookies
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    keys: [keys.cookieKey], // cookies is automatically encrypted
+  }),
+);
+app.use(passport.initialize());
+app.use(passport.session());
 require('./routes/authRoutes')(app); // pay attention to how to use app here for the authRoutes part
 // we can also do require('./routes/authRoutes')(app);
 
