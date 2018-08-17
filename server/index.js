@@ -35,7 +35,7 @@ mongoose.connect(keys.mongoURI);
 
 const app = express(); // create express app
 
-// tell express to use cookies
+// tell express to use cookies, it just polulates req.session where there will be a passport property
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
