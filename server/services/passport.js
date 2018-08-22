@@ -54,34 +54,49 @@ passport.use(
         // second argument, callback function, accessToken will be printed
         // When Passport authenticates a request, it parses the credentials contained in the request. It then invokes the verify callback with those credentials as arguments, in this case accessToken and refreshToken. If the credentials are valid, the verify callback invokes done to supply Passport with the user that authenticated.
 
-        (accessToken, refreshToken, profile, done) => {
-            // done:
-            // initiate a query
-            // look at the User collection and find the first record in the collection with that googleId, return  a promise to handle asynchronous code, not gonna use promise a lot, cause will use ES6 new feature to make promise legible, later will come back to refactor it
-            User.findOne({ googleId: profile.id }).then(existingUser => {
-                if (existingUser) {
-                    // If the credentials are valid, the verify callback invokes done to supply Passport with the user that authenticated.
+        // (accessToken, refreshToken, profile, done) => {
+        //     // done:
+        //     // initiate a query
+        //     // look at the User collection and find the first record in the collection with that googleId, return  a promise to handle asynchronous code, not gonna use promise a lot, cause will use ES6 new feature to make promise legible, later will come back to refactor it
+        //     User.findOne({ googleId: profile.id }).then(existingUser => {
+        //         if (existingUser) {
+        //             // If the credentials are valid, the verify callback invokes done to supply Passport with the user that authenticated.
 
-                    // alreay have a record with a giver profile id, do nothing
-                    // If the credentials are valid(here exist), the verify callback invokes done to supply Passport with the user that authenticated.
-                    done(null, existingUser);
-                    // 1st argument: err object, here is null
-                    // 2nd argument: tells passport we are finished, here is the user
-                } else {
-                    // not exist, create a new user
-                    new User({
-                        googleId: profile.id, // this is one model instance, not as quite fresh
-                    })
-                        .save() // same the instance
-                        .then(user => done(null, user)); // user here is another model instance, but they both represent the same underlying record inside our collection, well maintained than the 1st instance, some changes have been made while the use is being made, so use this one in the promise call back which is after .save()
-                    // every time we save a record to database, is synchronous operation
-                    // in order to get
-                }
-            });
-            // console.log('access token', accessToken);
-            // console.log('refresh token', refreshToken);
-            // console.log('profile', profile);
-        },
+        //             // alreay have a record with a giver profile id, do nothing
+        //             // If the credentials are valid(here exist), the verify callback invokes done to supply Passport with the user that authenticated.
+        //             done(null, existingUser);
+        //             // 1st argument: err object, here is null
+        //             // 2nd argument: tells passport we are finished, here is the user
+        //         } else {
+        //             // not exist, create a new user
+        //             new User({
+        //                 googleId: profile.id, // this is one model instance, not as quite fresh
+        //             })
+        //                 .save() // same the instance
+        //                 .then(user => done(null, user)); // user here is another model instance, but they both represent the same underlying record inside our collection, well maintained than the 1st instance, some changes have been made while the use is being made, so use this one in the promise call back which is after .save()
+        //             // every time we save a record to database, is synchronous operation
+        //             // in order to get
+        //         }
+        //     });
+        //     // console.log('access token', accessToken);
+        //     // console.log('refresh token', refreshToken);
+        //     // console.log('profile', profile);
+        // },
+        // how to refactor Promise with async/await syntax
+        async (accessToken, refreshToken, profile, done) => {
+            // let/const value = await promise;
+            // then use 'value' in the following code 
+            // The keyword 'await' makes JavaScript wait until that promise settles and returns its result.
+
+            const existingUser = await User.findOne({ googleId: profile.id });
+            if (existingUser) {
+                done(null, existingUser);
+            } else {
+                const user = await new User({ googleId: profile.id }).save();
+                done(null, user);
+            }
+
+        }
     ),
 );
 // tell express to involve passport when people go to this route, then user will be kicked to the oauth flow handled by passport

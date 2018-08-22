@@ -44,7 +44,12 @@ function Header(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             Notes
           </Typography>
-          <Button href="" color="inherit">
+          <Button
+            // href="http://localhost:3000/auth/google"
+            // the browser will aumatically append on the domain, eg. localhost:3000 for dev mode
+            href="/auth/google"
+            color="inherit"
+          >
             Login with Google
           </Button>
         </Toolbar>
