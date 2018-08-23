@@ -46,7 +46,7 @@ function Header(props) {
           </Typography>
           <Button
             // href="http://localhost:3000/auth/google"
-            // the browser will aumatically append on the domain, eg. localhost:3000 for dev mode
+            // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
             href="/auth/google"
             color="inherit"
           >

@@ -38,10 +38,25 @@ export function routeReducer(state = routeInitialState, action) {
 }
 
 /**
+ * Auth reducer
+ */
+
+export function authReducer(state = {}, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+
+/**
  * Creates the main reducer with the dynamically injected ones
  */
+// use combineReducers, the resulting reducer will call every child reducer and gather their results into a single state object to store
+// The state produced by combineReducers() namespaces the states of each reducer under their keys as passed to combineReducers()
+// use it in the creatStore() as the 1st argument in configureStore.js
 export default function createReducer(injectedReducers) {
   return combineReducers({
+    auth: authReducer,
     route: routeReducer,
     global: globalReducer,
     language: languageProviderReducer,

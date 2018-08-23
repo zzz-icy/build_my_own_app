@@ -11,7 +11,10 @@ import 'babel-polyfill';
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { Provider } from 'react-redux';
+// !!!! a component that makes the store ccessible to every component in the app
+
 import { ConnectedRouter } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
@@ -48,6 +51,7 @@ openSansObserver.load().then(() => {
 const initialState = {};
 const history = createHistory();
 const store = configureStore(initialState, history);
+
 const MOUNT_NODE = document.getElementById('app');
 
 const render = messages => {
@@ -72,7 +76,8 @@ if (module.hot) {
     render(translationMessages);
   });
 }
-
+/* eslint-disable indent */
+// prettier-ignore
 // Chunked polyfill for browsers without Intl support
 if (!window.Intl) {
   new Promise(resolve => {
@@ -83,7 +88,7 @@ if (!window.Intl) {
         import('intl/locale-data/jsonp/en.js'),
         import('intl/locale-data/jsonp/de.js'),
       ]),
-    )
+  )
     .then(() => render(translationMessages))
     .catch(err => {
       throw err;
