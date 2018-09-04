@@ -31,9 +31,20 @@ const styles = {
 // prettier-ignore
 /* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
+  renderContent() {
+    switch (this.props.auth) {
+      case false:
+        return 'Login with Google';
+      case null:
+        return 'Deciding';
+      default:
+        return 'Logged In';
+    }
+  }
   render() {
     const { classes } = this.props;
-
+    // console.log('inside Header:', this.props);
+    // console.log(auth);
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -58,8 +69,8 @@ class Header extends React.Component {
               href="/auth/google"
               color="inherit"
             >
-              Login with Google
-          </Button>
+              {this.renderContent()}
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
@@ -69,6 +80,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
+  auth: PropTypes.any,
 };
 
 export default withStyles(styles)(Header);

@@ -19,17 +19,18 @@ import { FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_ERROR } from './constants';
 
 /* eslint-disable indent */
 // prettier-ignore
-export function fetchUser() {
+export function fetchUser(userData) {
     return {
         type: FETCH_USER,
+        userData,
     };
 }
 /* eslint-disable indent */
 // prettier-ignore
-export function userFetched(data) {
+export function userFetched(userData) {
     return {
         type: FETCH_USER_SUCCESS,
-        data,
+        userData,
     };
 }
 /* eslint-disable indent */

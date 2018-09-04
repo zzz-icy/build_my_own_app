@@ -26,7 +26,11 @@ import { compose } from 'redux';
 import { fetchUser } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-
+import {
+  makeSelectUserData,
+  makeSelectError,
+  makeSelectFetching,
+} from './selectors';
 const AppWrapper = styled.div`
   max-width: calc(1024px + 16px * 2);
   margin: 0 auto;
@@ -40,9 +44,16 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
   componentDidMount() {
     // here to fetch user to see if the user is authenticated
     // initial ajax request  componentWillMount
+    // if (!this.props.userData) {
     this.props.onFetchUser();
+    // console.log(this.props.userData);
+    // }
   }
   render() {
+    const headerProps = {
+      auth: this.props.auth,
+    }
+    console.log('Header props:', headerProps);
     return (
       <AppWrapper>
         <Helmet
@@ -54,7 +65,7 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
             content="A React.js Boilerplate application"
           />
         </Helmet>
-        <Header />
+        <Header {...headerProps} />
         {/* always visible */}
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -69,12 +80,13 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
 }
 App.propTypes = {
   onFetchUser: PropTypes.func,
+  auth: PropTypes.any,
 };
 const mapStateToProps = createStructuredSelector({
-  // notespage: makeSelectNotesPage(),
-  // notes: makeSelectNotes(),
-  // error: makeSelectError(),
-  // loading: makeSelectLoading(),
+  // app: makeSelectApp(),
+  auth: makeSelectUserData(),
+  error: makeSelectError(),
+  loading: makeSelectFetching(),
 });
 
 function mapDispatchToProps(dispatch) {

@@ -16,8 +16,9 @@ export function* getUser() {
 
     try {
         // Call our request helper (see 'utils/request')
+        // need to be fixed, if signed out, won't work
         const data = yield call(request, requestURL);
-        // console.log(data);
+        console.log(data);
         yield put(userFetched(data));
     } catch (err) {
         yield put(userFetchingError(err));

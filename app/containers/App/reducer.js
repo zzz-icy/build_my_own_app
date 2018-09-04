@@ -26,7 +26,7 @@ import { FETCH_USER, FETCH_USER_ERROR, FETCH_USER_SUCCESS } from './constants';
 const initialState = fromJS({
   fetching: false,
   error: false,
-  data: false,
+  auth: null,
 });
 
 // function appReducer(state = initialState, action) {
@@ -53,11 +53,11 @@ function authReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_USER:
       return state.set('fetching', true)
-        .set('error', false)
-        .set('data', false);
+        .set('error', false);
+    // .set('auth', null);
     case FETCH_USER_SUCCESS:
       // console.log(action);
-      return state.set('data', action.data)
+      return state.set('auth', !!action.userData || false)
         .set('fetching', false);
     case FETCH_USER_ERROR:
       return state.set('error', action.err)
