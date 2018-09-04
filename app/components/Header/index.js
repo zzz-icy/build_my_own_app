@@ -38,7 +38,7 @@ class Header extends React.Component {
       case null:
         return 'Deciding';
       default:
-        return 'Logged In';
+        return 'Logout';
     }
   }
   render() {
