@@ -53,6 +53,7 @@ class Header extends React.Component {
     </Button>;
     }
   }
+
   render() {
     const { classes } = this.props;
     // console.log('inside Header:', this.props);
@@ -61,19 +62,19 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
+            {(!this.props.auth) ? null : (<IconButton
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton>)}
             <Typography
               variant="title"
               color="inherit"
               className={classes.flex}
             >
-              Notes
+              Could Be Everything
           </Typography>
             <Button
               // href="http://localhost:3000/auth/google"
