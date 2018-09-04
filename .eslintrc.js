@@ -39,6 +39,10 @@ module.exports = {
         SwitchCase: 1,
       },
     ],
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["to"]
+    }],
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
     'jsx-a11y/label-has-for': 2,

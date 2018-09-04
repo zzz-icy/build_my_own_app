@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
@@ -62,20 +63,24 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            {(!this.props.auth) ? null : (<IconButton
+            {this.props.auth ? (<IconButton
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
             >
               <MenuIcon />
-            </IconButton>)}
+            </IconButton>) : null}
             <Typography
               variant="title"
               color="inherit"
               className={classes.flex}
             >
-              Could Be Everything
-          </Typography>
+              <Link
+                to={this.props.auth ? '/notes' : '/'}
+              >
+                Could Be Everything
+              </Link>
+            </Typography>
             <Button
               // href="http://localhost:3000/auth/google"
               // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
@@ -86,7 +91,7 @@ class Header extends React.Component {
             </Button>
           </Toolbar>
         </AppBar>
-      </div>
+      </div >
     );
   }
 }
