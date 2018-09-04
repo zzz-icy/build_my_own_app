@@ -15,7 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-
+import login from './images/btn_google_signin_light_normal_web.png';
 const styles = {
   root: {
     flexGrow: 1,
@@ -41,10 +41,10 @@ class Header extends React.Component {
           href="/auth/google"
           color="inherit"
         >
-          Login with Google
-      </Button>;
+          <img src={login} alt='login with google button' />
+        </Button>;
       case null:
-        return 'Deciding';
+        return <img src={login} alt='deciding' width={150} />;
       default:
         return <Button
           href="/api/logout"
@@ -76,9 +76,10 @@ class Header extends React.Component {
               className={classes.flex}
             >
               <Link
-                to={this.props.auth ? '/notes' : '/'}
+                to={this.props.auth ? '/dashboard' : '/'}
+                style={{ color: 'white' }}
               >
-                Could Be Everything
+                Could Be Anything
               </Link>
             </Typography>
             <Button

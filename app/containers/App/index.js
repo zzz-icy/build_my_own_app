@@ -17,6 +17,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotesPage from 'containers/NotesPage/Loadable';
 // import AddNewNotePage from 'containers/AddNewNotePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Landing from 'components/Landing';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import injectSaga from 'utils/injectSaga';
@@ -68,7 +69,8 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
         <Header {...headerProps} />
         {/* always visible */}
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/dashboard" component={HomePage} />
           <Route path="/notes" component={NotesPage} />
           {/* <Route path="/add" component={AddNewNotePage} /> */}
           <Route path="/" component={NotFoundPage} />
