@@ -34,11 +34,23 @@ class Header extends React.Component {
   renderContent() {
     switch (this.props.auth) {
       case false:
-        return 'Login with Google';
+        return <Button
+          // href="http://localhost:3000/auth/google"
+          // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
+          href="/auth/google"
+          color="inherit"
+        >
+          Login with Google
+      </Button>;
       case null:
         return 'Deciding';
       default:
-        return 'Logout';
+        return <Button
+          href="/api/logout"
+          color="inherit"
+        >
+          Logout
+    </Button>;
     }
   }
   render() {

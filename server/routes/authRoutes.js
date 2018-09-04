@@ -22,7 +22,9 @@ module.exports = app => {  // exports as a function
 
     app.get('/api/logout', (req, res) => {
         req.logout(); // a function attached to req actumatically by passsport, it takes the cookie containing the user id, and kills the cookies
-        res.send(req.user); // send back some ackonwledgement, no content or undefined
+        // res.send(req.user); // send back some ackonwledgement, no content or undefined
+        res.redirect('/');
+
     })
     // where we will see if the user is authenticated
     // the instance our app starts to boot up, we will make a api request to see if the user is authenticated
