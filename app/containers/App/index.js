@@ -10,7 +10,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
 import HomePage from 'containers/HomePage/Loadable';
 // import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotesPage from 'containers/NotesPage/Loadable';
@@ -18,6 +19,13 @@ import NotesPage from 'containers/NotesPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import injectSaga from 'utils/injectSaga';
+import injectReducer from 'utils/injectReducer';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { fetchUser } from './actions';
+import reducer from './reducer';
+import saga from './saga';
 
 const AppWrapper = styled.div`
   max-width: calc(1024px + 16px * 2);
@@ -27,24 +35,61 @@ const AppWrapper = styled.div`
   padding: 0 16px;
   flex-direction: column;
 `;
-
-export default function App() {
-  return (
-    <AppWrapper>
-      <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
-      >
-        <meta name="description" content="A React.js Boilerplate application" />
-      </Helmet>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/notes" component={NotesPage} />
-        {/* <Route path="/add" component={AddNewNotePage} /> */}
-        <Route path="/" component={NotFoundPage} />
-      </Switch>
-      <Footer />
-    </AppWrapper>
-  );
+// prettier-ignore
+class App extends React.Component {  // eslint-disable-line react/prefer-stateless-function
+  componentDidMount() {
+    // here to fetch user to see if the user is authenticated
+    // initial ajax request  componentWillMount
+    this.props.onFetchUser();
+  }
+  render() {
+    return (
+      <AppWrapper>
+        <Helmet
+          titleTemplate="%s - React.js Boilerplate"
+          defaultTitle="React.js Boilerplate"
+        >
+          <meta
+            name="description"
+            content="A React.js Boilerplate application"
+          />
+        </Helmet>
+        <Header />
+        {/* always visible */}
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/notes" component={NotesPage} />
+          {/* <Route path="/add" component={AddNewNotePage} /> */}
+          <Route path="/" component={NotFoundPage} />
+        </Switch>
+        <Footer />
+      </AppWrapper>
+    );
+  }
 }
+App.propTypes = {
+  onFetchUser: PropTypes.func,
+};
+const mapStateToProps = createStructuredSelector({
+  // notespage: makeSelectNotesPage(),
+  // notes: makeSelectNotes(),
+  // error: makeSelectError(),
+  // loading: makeSelectLoading(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onFetchUser: () => dispatch(fetchUser()),
+  };
+}
+const withReducer = injectReducer({ key: 'App', reducer });
+const withSaga = injectSaga({ key: 'App', saga });
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+export default compose(
+  withReducer,
+  withSaga,
+  withConnect,
+)(App);

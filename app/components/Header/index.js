@@ -27,35 +27,44 @@ const styles = {
     marginRight: 20,
   },
 };
+/* eslint-disable indent */
+// prettier-ignore
 /* eslint-disable react/prefer-stateless-function */
-function Header(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Notes
+class Header extends React.Component {
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="title"
+              color="inherit"
+              className={classes.flex}
+            >
+              Notes
           </Typography>
-          <Button
-            // href="http://localhost:3000/auth/google"
-            // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
-            href="/auth/google"
-            color="inherit"
-          >
-            Login with Google
+            <Button
+              // href="http://localhost:3000/auth/google"
+              // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
+              href="/auth/google"
+              color="inherit"
+            >
+              Login with Google
           </Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 Header.propTypes = {

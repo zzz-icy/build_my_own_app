@@ -12,3 +12,9 @@
 // export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
 // export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
 // export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+
+export const FETCH_USER = 'heroku-react-boilerplate/App/FETCH_USER';
+/* eslint-disable indent */
+// prettier-ignore
+export const FETCH_USER_SUCCESS = 'heroku-react-boilerplate/App/FETCH_USER_SUCCESS';
+export const FETCH_USER_ERROR = 'heroku-react-boilerplate/App/FETCH_USER_ERROR';

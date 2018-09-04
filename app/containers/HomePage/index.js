@@ -91,6 +91,7 @@ export class HomePage extends React.PureComponent {
 // );
 
 // const withReducer = injectReducer({ key: 'home', reducer });
+// `mode` is an optional argument, default value is `RESTART_ON_REMOUNT`
 // const withSaga = injectSaga({ key: 'home', saga });
 
 // export default compose(

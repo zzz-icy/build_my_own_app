@@ -15,7 +15,31 @@
 //  *    }
 //  */
 
-// import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import { FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_ERROR } from './constants';
+
+/* eslint-disable indent */
+// prettier-ignore
+export function fetchUser() {
+    return {
+        type: FETCH_USER,
+    };
+}
+/* eslint-disable indent */
+// prettier-ignore
+export function userFetched(data) {
+    return {
+        type: FETCH_USER_SUCCESS,
+        data,
+    };
+}
+/* eslint-disable indent */
+// prettier-ignore
+export function userFetchingError(err) {
+    return {
+        type: FETCH_USER_ERROR,
+        err,
+    };
+}
 
 // /**
 //  * Load the repositories, this action starts the request saga
