@@ -16,7 +16,7 @@ module.exports = app => {  // exports as a function
         '/auth/google/callback',
         passport.authenticate('google'), // after the user successfully authenticated with Google, where do we send them to in this app
         (req, res) => {
-            res.redirect('/notes');
+            res.redirect('/indecision');
         }
     );
 

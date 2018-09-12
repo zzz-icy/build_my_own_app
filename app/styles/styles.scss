@@ -1,0 +1,11 @@
+@import './base/settings';
+@import './base/base';  // when we import a partial, we leave off the extension and the underscore
+@import './components/landing';
+@import './components/IndecisionApp/app-base';
+@import './components/IndecisionApp/header';
+@import './components/IndecisionApp/container';
+@import './components/IndecisionApp/button';
+@import './components/IndecisionApp/widget';
+@import './components/IndecisionApp/option';
+@import './components/IndecisionApp/add-option';
+@import './components/IndecisionApp/modal';

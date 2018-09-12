@@ -19,6 +19,7 @@ import NotesPage from 'containers/NotesPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Landing from 'components/Landing';
 import Header from 'components/Header';
+import IndecisionAppPage from 'containers/IndecisionAppPage/Loadable';
 import Footer from 'components/Footer';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -72,6 +73,7 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={HomePage} />
           <Route path="/notes" component={NotesPage} />
+          <Route path="/indecision" component={IndecisionAppPage} />
           {/* <Route path="/add" component={AddNewNotePage} /> */}
           <Route path="/" component={NotFoundPage} />
         </Switch>
