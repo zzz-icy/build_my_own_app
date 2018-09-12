@@ -16,9 +16,9 @@ import { Provider } from 'react-redux';
 // !!!! a component that makes the store ccessible to every component in the app
 
 import { ConnectedRouter } from 'react-router-redux';
-import FontFaceObserver from 'fontfaceobserver';
+// import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
-import 'sanitize.css/sanitize.css';
+import 'sanitize.css/sanitize.css'; // similar to normalize.css
 
 // Import root app
 import App from 'containers/App';
@@ -36,17 +36,17 @@ import configureStore from './configureStore';
 import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
-import './global-styles';
+// import './global-styles';
 import './styles/styles.scss';
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
-const openSansObserver = new FontFaceObserver('Open Sans', {});
+// const openSansObserver = new FontFaceObserver('Open Sans', {});
 
 // When Open Sans is loaded, add a font-family using Open Sans to the body
-openSansObserver.load().then(() => {
-  document.body.classList.add('fontLoaded');
-});
+// openSansObserver.load().then(() => {
+//   document.body.classList.add('fontLoaded');
+// });
 
 // Create redux store with history
 const initialState = {};
