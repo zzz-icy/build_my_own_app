@@ -49,6 +49,7 @@ class Header extends React.Component {
         return <Button
           href="/api/logout"
           color="inherit"
+          className="big-button"
         >
           Logout
     </Button>;

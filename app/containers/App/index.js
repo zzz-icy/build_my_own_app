@@ -34,13 +34,15 @@ import {
   makeSelectFetching,
 } from './selectors';
 const AppWrapper = styled.div`
-  max-width: calc(1024px + 16px * 2);
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   min-height: 100%;
-  padding: 0 16px;
+  padding: 0;
   flex-direction: column;
 `;
+
+// max-width: calc(1024px + 16px * 2);
+
 // prettier-ignore
 class App extends React.Component {  // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
@@ -55,7 +57,7 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
     const headerProps = {
       auth: this.props.auth,
     }
-    console.log('Header props:', headerProps);
+    // console.log('Header props:', headerProps);
     return (
       <AppWrapper>
         <Helmet
