@@ -35,7 +35,9 @@ function Landing(props) {
   return (
     <div className={props.classes.list}>
       <H1>Welcome</H1>
-      <H2>Could be Anything</H2>
+      <H2>
+        Log in with your Google account to use the Indecision Application.
+      </H2>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 /* eslint consistent-return:0 */
 
-const express = require('express'); // import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
+const express = require('express');
+// import modules using commonjs modules which is a system implemented in NodeJs for requiring or sharing between different files, node does not have the support for ES2015 modules(import XXX from 'XXX") which is used on the front end side of our application
 
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session'); // to have access to cookies
