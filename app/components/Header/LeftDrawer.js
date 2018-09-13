@@ -5,9 +5,10 @@ import Drawer from '@material-ui/core/Drawer';
 // import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-// import TouchApp from '@material-ui/icons/TouchApp';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import IconButton from '@material-ui/core/IconButton';
+import ListItem from '@material-ui/core/ListItem';
+// import ListItemText from '@material-ui/core/ListItemText';
 
 /* eslint-disable indent */
 // prettier-ignore
@@ -32,6 +33,9 @@ const styles = {
         justifyContent: 'flex-end',
         padding: '0 8px',
     },
+    listItemTextRoot: {
+        fontSize: 24,
+    },
 };
 /* eslint-disable indent */
 // prettier-ignore
@@ -42,13 +46,27 @@ class LeftDrawer extends React.Component {
     render() {
         const { classes } = this.props;
         const sideList = (
-            <div className={classes.list}>
-                <List className={classes.listItem}>Indecision</List>
+            // <div className={classes.list}>
+            //     <List className={classes.listItem}>Indecision</List>
+            //     <Divider />
+            //     <List className={classes.listItem}>Expensify</List>
+            //     <Divider />
+            //     <List className={classes.listItem}>About</List>
+
+            <List component="nav" className={classes.list}>
+                <ListItem button>
+                    Indecision
+                </ListItem>
                 <Divider />
-                <List className={classes.listItem}>Expensify</List>
+                <ListItem button>
+                    Expensify
+                </ListItem>
                 <Divider />
-                <List className={classes.listItem}>About</List>
-            </div>
+                <ListItem button>
+                    About
+                </ListItem>
+            </List>
+            // </div>
         );
         return (
             <Drawer
@@ -61,7 +79,6 @@ class LeftDrawer extends React.Component {
                     </IconButton>
                 </div>
                 <Divider />
-
                 {sideList}
             </Drawer>
         );
