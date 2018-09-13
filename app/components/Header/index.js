@@ -16,9 +16,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import login from './images/btn_google_signin_light_normal_web.png';
+import LeftDrawer from './LeftDrawer';
+
 const styles = {
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    background: '#20222b',
   },
   flex: {
     flexGrow: 1,
@@ -32,6 +35,18 @@ const styles = {
 // prettier-ignore
 /* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
+  state = {
+    open: false,
+  };
+
+  handleDrawerOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleDrawerClose = () => {
+    this.setState({ open: false });
+  };
+
   renderContent() {
     switch (this.props.auth) {
       case false:
@@ -49,7 +64,6 @@ class Header extends React.Component {
         return <Button
           href="/api/logout"
           color="inherit"
-          className="big-button"
         >
           Logout
     </Button>;
@@ -61,16 +75,21 @@ class Header extends React.Component {
     // console.log('inside Header:', this.props);
     // console.log(auth);
     return (
-      <div className={classes.root}>
-        <AppBar position="static">
+      <div>
+        <AppBar position="static" className={classes.root}>
           <Toolbar>
-            {this.props.auth ? (<IconButton
+            <IconButton
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
+              onClick={this.handleDrawerOpen}
             >
               <MenuIcon />
-            </IconButton>) : null}
+            </IconButton>
+            <LeftDrawer
+              handleDrawerClose={this.handleDrawerClose}
+              open={this.state.open}
+            />
             <Typography
               variant="title"
               color="inherit"
@@ -93,7 +112,7 @@ class Header extends React.Component {
             </Button>
           </Toolbar>
         </AppBar>
-      </div >
+      </div>
     );
   }
 }
