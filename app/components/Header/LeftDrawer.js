@@ -8,6 +8,8 @@ import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import IconButton from '@material-ui/core/IconButton';
 import ListItem from '@material-ui/core/ListItem';
+// import { Link } from 'react-router-dom';
+
 // import ListItemText from '@material-ui/core/ListItemText';
 
 /* eslint-disable indent */
@@ -23,18 +25,11 @@ const styles = {
         paddingLeft: 15,
 
     },
-    img: {
-        height: 12,
-        width: 12,
-    },
     drawerHeader: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
         padding: '0 8px',
-    },
-    listItemTextRoot: {
-        fontSize: 24,
     },
 };
 /* eslint-disable indent */
@@ -45,16 +40,27 @@ class LeftDrawer extends React.Component {
 
     render() {
         const { classes } = this.props;
+        // const HomeLink = props => <Link to="/" {...props} />
+        // const IndecisionLink = props => <Link to="/indecision" {...props} />
+
         const sideList = (
-            // <div className={classes.list}>
-            //     <List className={classes.listItem}>Indecision</List>
-            //     <Divider />
-            //     <List className={classes.listItem}>Expensify</List>
-            //     <Divider />
-            //     <List className={classes.listItem}>About</List>
 
             <List component="nav" className={classes.list}>
-                <ListItem button>
+                <ListItem
+                    button
+                    // component={HomeLink}
+                    component='a'
+                    href="/"
+                >
+                    Home
+                </ListItem>
+                <Divider />
+                <ListItem
+                    button
+                    // component={IndecisionLink}
+                    component='a'
+                    href="/indecision"
+                >
                     Indecision
                 </ListItem>
                 <Divider />

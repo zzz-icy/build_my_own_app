@@ -16,10 +16,12 @@ import MusicNote from '@material-ui/icons/MusicNote';
 
 const styles = {
   root: {
-    width: 'flex',
+    width: '100%',
     background: '#20222b',
     // boxShadow: '2px 2px 1px grey',
     // flex: 1,
+    position: 'absolute',
+    bottom: 0,
   },
   label: {
     color: 'white',

@@ -32,7 +32,7 @@ const Action = (props) => (
 /* eslint-disable indent */
 // prettier-ignore
 Action.propTypes = {
-    hasOption: PropTypes.func,
+    hasOption: PropTypes.bool,
     handlePick: PropTypes.func,
 };
 export default Action;

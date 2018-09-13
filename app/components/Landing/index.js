@@ -5,6 +5,8 @@
  */
 
 import React from 'react';
+import MenuIcon from '@material-ui/icons/Menu';
+
 // import PropTypes from 'prop-types';
 // import H1 from 'components/H1';
 // import H2 from 'components/H2';
@@ -23,7 +25,7 @@ function Landing() {
     <div className="landing">
       <div className="landing__title">Welcome</div>
       <div className="landing__body">
-        Log in with your Google account to use the Indecision Application.
+        Take a look at the Indecision Application using the Nav menu&nbsp; <MenuIcon />
       </div>
     </div>
   );
