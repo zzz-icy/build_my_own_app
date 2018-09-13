@@ -30,6 +30,15 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+    fontSize: 16,
+    ':hover': {
+      textDecoration: 'none',
+      color: 'red',
+    },
+  },
 };
 /* eslint-disable indent */
 // prettier-ignore
@@ -97,7 +106,7 @@ class Header extends React.Component {
             >
               <Link
                 to={this.props.auth ? '/dashboard' : '/'}
-                style={{ color: 'white' }}
+                className={classes.link}
               >
                 Could Be Anything
               </Link>
@@ -112,7 +121,7 @@ class Header extends React.Component {
             </Button>
           </Toolbar>
         </AppBar>
-      </div>
+      </div >
     );
   }
 }
