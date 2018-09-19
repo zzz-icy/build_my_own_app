@@ -52,6 +52,12 @@ const styles = {
       color: 'red',
     },
   },
+  label: {
+    color: 'white',
+  },
+  icon: {
+    color: '#8357c5',
+  },
 };
 /* eslint-disable indent */
 // prettier-ignore
@@ -61,7 +67,7 @@ class Header extends React.Component {
     open: false,
     value: 0,
   };
-  handleChange = (value) => {
+  handleChange = (event, value) => { // need event here, why?
     this.setState({ value });
   };
   handleDrawerOpen = () => {
@@ -133,7 +139,6 @@ class Header extends React.Component {
               </Tooltip>
             </Typography>
 
-
             <BottomNavigation
               value={value}
               onChange={this.handleChange}
@@ -181,7 +186,7 @@ class Header extends React.Component {
 
           </Toolbar>
         </AppBar>
-      </div >
+      </div>
     );
   }
 }

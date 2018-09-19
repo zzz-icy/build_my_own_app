@@ -10,6 +10,7 @@ import { Divider } from '@material-ui/core';
 // prettier-ignore
 const Info = () => (
     <Grid container direction='column' spacing={16}>
+        {/* wrap is default to wrap */}
         {/* alignItems default value: stretch, this will make card fill the whole grid */}
         <Grid item sm={12}>
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
