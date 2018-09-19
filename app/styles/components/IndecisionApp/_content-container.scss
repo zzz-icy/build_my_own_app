@@ -1,0 +1,10 @@
+.content-container {
+    max-width: 60rem;
+    margin: 0 auto;  // to center the container, not content inside
+    padding: 0 $m-size;
+    top:200px;
+    left: 10%;
+    right: 10%;
+    position: absolute;
+    overflow:auto;
+}

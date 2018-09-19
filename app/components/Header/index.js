@@ -14,8 +14,12 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+// import RestoreIcon from '@material-ui/icons/Restore';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import MusicNote from '@material-ui/icons/MusicNote';
 import login from './images/btn_google_signin_light_normal_web.png';
 import LeftDrawer from './LeftDrawer';
 
@@ -24,8 +28,13 @@ const styles = {
     // flexGrow: 1,
     background: '#20222b',
     overflow: 'hidden',
-    hright: 64,
+    height: 64,
     position: 'fixed',
+  },
+  foot: {
+    // flexGrow: 1,
+    background: '#20222b',
+    width: 400,
   },
   flex: {
     flexGrow: 1,
@@ -50,8 +59,11 @@ const styles = {
 class Header extends React.Component {
   state = {
     open: false,
+    value: 0,
   };
-
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
   handleDrawerOpen = () => {
     this.setState({ open: true });
   };
@@ -85,6 +97,7 @@ class Header extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { value } = this.state;
     // console.log('inside Header:', this.props);
     // console.log(auth);
     return (
@@ -118,6 +131,44 @@ class Header extends React.Component {
               </Link>
               </Tooltip>
             </Typography>
+
+
+            <BottomNavigation
+              value={value}
+              onChange={this.handleChange}
+              className={classes.foot}
+            >
+              <BottomNavigationAction
+                label="Hi"
+                classes={{
+                  label: classes.label,
+                }}
+                icon={<MusicNote className={classes.icon} />}
+              />
+              <BottomNavigationAction
+                label="I"
+                classes={{
+                  label: classes.label,
+                }}
+                icon={<MusicNote className={classes.icon} />}
+              />
+              <BottomNavigationAction
+                label="am"
+                classes={{
+                  label: classes.label,
+                }}
+                icon={<MusicNote className={classes.icon} />}
+              />
+              <BottomNavigationAction
+                label="Hannah"
+                classes={{
+                  label: classes.label,
+                }}
+                icon={<MusicNote className={classes.icon} />}
+              />
+            </BottomNavigation>
+
+
             <Button
               // href="http://localhost:3000/auth/google"
               // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode

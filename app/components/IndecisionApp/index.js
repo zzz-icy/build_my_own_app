@@ -16,7 +16,11 @@ import IndecisionHome from './IndecisionHome';
 /* eslint-disable react/prefer-stateless-function */
 class IndecisionApp extends React.PureComponent {
   render() {
-    return (<IndecisionHome />);
+    return (
+
+      <IndecisionHome />
+
+    );
   }
 }
 

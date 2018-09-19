@@ -20,7 +20,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Landing from 'components/Landing';
 import Header from 'components/Header';
 import IndecisionAppPage from 'containers/IndecisionAppPage/Loadable';
-import Footer from 'components/Footer';
+// import Footer from 'components/Footer';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import { connect } from 'react-redux';
@@ -79,7 +79,6 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
           {/* <Route path="/add" component={AddNewNotePage} /> */}
           <Route path="/" component={NotFoundPage} />
         </Switch>
-        <Footer />
       </AppWrapper>
     );
   }

@@ -3,6 +3,10 @@ background: $off-black;
 color: white;
 margin-bottom: $m-size;
 padding: $m-size 0; // 0 for left and right, 1.6rem for bottom and top
+top:64px;
+position: absolute;
+width: 100%;
+overflow-y:auto;
 
 }
 

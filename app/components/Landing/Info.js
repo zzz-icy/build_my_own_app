@@ -12,7 +12,7 @@ const Info = () => (
     <Grid container direction='column' spacing={16}>
         {/* alignItems default value: stretch, this will make card fill the whole grid */}
         <Grid item sm={12}>
-            <Paper style={{ background: '#20222b', padding: 20 }}>
+            <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <p>
                     Currently, I have obtained my Master Degree in Computer Science from Southern Methodist University this May.
         </p>
@@ -29,7 +29,7 @@ const Info = () => (
         </Grid>
         <Divider />
         <Grid item sm={12} >
-            <Paper style={{ background: '#20222b', padding: 20 }}>
+            <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <div style={{ marginBottom: 10 }}>
                     <CloudDownload style={{ marginRight: 15 }} />
                     <a
@@ -63,7 +63,7 @@ const Info = () => (
             </Paper>
         </Grid>
         <Grid item sm={12} >
-            <Paper style={{ background: '#20222b', padding: 20 }}>
+            <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <p>aaaaaaaaaaaaa</p>
                 <p>aaaaaaaaaaaaa</p>
                 <p>aaaaaaaaaaaaa</p>

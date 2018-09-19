@@ -113,7 +113,7 @@ class IndecisionHome extends React.Component {
             <div className="app-base">
                 <Header title={title} subtitle={subtitle} />
 
-                <div className="container">
+                <div className="content-container">
 
                     <Action
                         hasOption={this.state.options.length > 0}
