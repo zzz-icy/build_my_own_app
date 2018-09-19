@@ -27,7 +27,10 @@ import Info from './Info';
 function Landing() {
   return (
     <div className="landing">
-      <div className="landing__title">Welcome</div>
+      <div>
+        <h1 className="landing__title">Welcome</h1>
+        <h2 className="landing__subtitle">A little bit of info of me.</h2>
+      </div>
       <Grid container className="landing__body" spacing={16} direction='row' >
         <Grid item container xs={12} sm={3} direction='column' alignItems='center'>
           <Paper

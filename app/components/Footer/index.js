@@ -20,9 +20,10 @@ const styles = {
     background: '#20222b',
     // boxShadow: '2px 2px 1px grey',
     // flex: 1,
+    height: 64,
     position: 'fixed',
     bottom: 0,
-    // overflow: 'hidden',
+    overflow: 'hidden',
   },
   label: {
     color: 'white',

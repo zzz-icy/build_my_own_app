@@ -2,28 +2,39 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    // min-height: 100%;
     height: 100%;
+    top:64px;
+    // bottom:64px;
     flex-direction: column;
     align-items: center;
     background: $dark-blue;
     margin-top: $m-size;
     margin-bottom: $m-size;
     color: white;
-    // overflow: 'hidden';
-
-
-  }
+    position:absolute;  
+    overflow-y: auto;
+}
 .landing__title {
-  font-size: $xl-size;
+  font-size: $l-size;
   font-family: Helvetica, Arial, sans-serif;
   margin: $m-size 0;
+  // display: inline-block;
 
 }
+.landing__subtitle {
+  color: $off-white;
+  font-size:$m-size;
+  font-weight: 500;
+  margin: 0 0 10 0;
+  // display: inline-block;
+  }
 
 .landing__body {
   flex-grow: 1;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: $m-size 0;
+  font-weight: 400;
   font-family: Helvetica, Arial, sans-serif;
   color: lighten($purple, 20%);
   // color: $purple,
