@@ -11,6 +11,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
+
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
@@ -95,6 +97,7 @@ class Header extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+
             <LeftDrawer
               handleDrawerClose={this.handleDrawerClose}
               open={this.state.open}
@@ -104,12 +107,14 @@ class Header extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              <Link
-                to={this.props.auth ? '/dashboard' : '/'}
-                className={classes.link}
-              >
-                Could Be Anything
+              <Tooltip title='Back to HomePage'>
+                <Link
+                  to={this.props.auth ? '/dashboard' : '/'}
+                  className={classes.link}
+                >
+                  Hi, I am Hannah!
               </Link>
+              </Tooltip>
             </Typography>
             <Button
               // href="http://localhost:3000/auth/google"
@@ -119,6 +124,7 @@ class Header extends React.Component {
             >
               {this.renderContent()}
             </Button>
+
           </Toolbar>
         </AppBar>
       </div >

@@ -20,8 +20,9 @@ const styles = {
     background: '#20222b',
     // boxShadow: '2px 2px 1px grey',
     // flex: 1,
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
+    // overflow: 'hidden',
   },
   label: {
     color: 'white',
@@ -52,28 +53,28 @@ class Footer extends React.Component {
         className={classes.root}
       >
         <BottomNavigationAction
-          label="Do"
+          label="Hi"
           classes={{
             label: classes.label,
           }}
           icon={<MusicNote className={classes.icon} />}
         />
         <BottomNavigationAction
-          label="Re"
+          label="I"
           classes={{
             label: classes.label,
           }}
           icon={<MusicNote className={classes.icon} />}
         />
         <BottomNavigationAction
-          label="Mi"
+          label="am"
           classes={{
             label: classes.label,
           }}
           icon={<MusicNote className={classes.icon} />}
         />
         <BottomNavigationAction
-          label="Fa"
+          label="Hannah"
           classes={{
             label: classes.label,
           }}

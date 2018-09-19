@@ -9,21 +9,23 @@
     margin-top: $m-size;
     margin-bottom: $m-size;
     color: white;
+    // overflow: 'hidden';
+
 
   }
 .landing__title {
   font-size: $xl-size;
   font-family: Helvetica, Arial, sans-serif;
-  margin: $l-size 0;
+  margin: $m-size 0;
 
 }
 
 .landing__body {
-  font-size: $l-size;
+  flex-grow: 1;
+  font-size: 1.8rem;
   margin: $m-size 0;
   font-family: Helvetica, Arial, sans-serif;
-  color: lighten($purple, 20%),
+  color: lighten($purple, 20%);
   // color: $purple,
-
 
 }
