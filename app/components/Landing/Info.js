@@ -62,11 +62,26 @@ const Info = () => (
                 </div>
             </Paper>
         </Grid>
-        <Grid item sm={12} >
+        <Grid container item sm={12} direction='column'>
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
-                <p>aaaaaaaaaaaaa</p>
-                <p>aaaaaaaaaaaaa</p>
-                <p>aaaaaaaaaaaaa</p>
+                <Grid container item sm={12} direction='row' justify='space-between'>
+                    <Grid item sm={8}>
+                        <p>Product Development Intern (Front-end/UI)</p>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <p>01/2018 - 05/2018</p>
+                    </Grid>
+
+                </Grid>
+                <Grid container item sm={12} direction='row' justify='space-between'>
+
+                    <Grid item sm={8}>
+                        <p>Master Degree in Computer Science, Southern Methodist University</p>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <p>09/2016 - 05/2018</p>
+                    </Grid>
+                </Grid>
             </Paper>
         </Grid>
     </Grid>

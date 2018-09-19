@@ -61,7 +61,7 @@ class Header extends React.Component {
     open: false,
     value: 0,
   };
-  handleChange = (event, value) => {
+  handleChange = (value) => {
     this.setState({ value });
   };
   handleDrawerOpen = () => {
