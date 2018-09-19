@@ -77,7 +77,7 @@ class App extends React.Component {  // eslint-disable-line react/prefer-statele
           <Route path="/notes" component={NotesPage} />
           <Route path="/indecision" component={IndecisionAppPage} />
           {/* <Route path="/add" component={AddNewNotePage} /> */}
-          <Route path="/" component={NotFoundPage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </AppWrapper>
     );
