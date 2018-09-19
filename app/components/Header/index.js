@@ -17,7 +17,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 // import RestoreIcon from '@material-ui/icons/Restore';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import MusicNote from '@material-ui/icons/MusicNote';
 import login from './images/btn_google_signin_light_normal_web.png';
@@ -123,12 +123,13 @@ class Header extends React.Component {
               className={classes.flex}
             >
               <Tooltip title='Back to HomePage'>
-                <Link
-                  to={this.props.auth ? '/dashboard' : '/'}
+                <a
+                  // to={this.props.auth ? '/dashboard' : '/'}
+                  href='/'
                   className={classes.link}
                 >
                   Hi, I am Hannah!
-              </Link>
+              </a>
               </Tooltip>
             </Typography>
 
