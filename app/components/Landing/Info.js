@@ -34,11 +34,11 @@ const Info = () => (
                 <div style={{ marginBottom: 10 }}>
                     <CloudDownload style={{ marginRight: 15 }} />
                     <a
-                        href="./file/Han_Zhang_Resume.pdf"
+                        href="https://drive.google.com/file/d/1aTTZiIcT9O11IAH5ieVmdiLoxotLL6Bd/view?usp=sharing"
                         download
                         style={{ color: 'white' }}
                     >
-                        Click to get a PDF copy of my resume.
+                        Click to view my resume.
                     </a>
                 </div>
                 <div style={{ marginBottom: 10 }}>
