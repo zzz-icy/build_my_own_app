@@ -64,8 +64,20 @@ class LeftDrawer extends React.Component {
                     Indecision
                 </ListItem>
                 <Divider />
-                <ListItem button>
+                <ListItem
+                    button
+                    component='a'
+                    href="https://my-own-react-app-expensify.herokuapp.com/"
+                >
                     Expensify
+                </ListItem>
+                <Divider />
+                <ListItem
+                    button
+                    component='a'
+                    href="https://web-alto.herokuapp.com/"
+                >
+                    Alto - Responsive
                 </ListItem>
                 <Divider />
                 <ListItem button>

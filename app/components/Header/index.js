@@ -58,6 +58,14 @@ const styles = {
   icon: {
     color: '#8357c5',
   },
+  bottomActionRoot: {
+    width: 34,
+    padding: 0,
+  },
+  bottomActionWrapper: {
+    width: 34,
+    // padding: 0,
+  },
 };
 /* eslint-disable indent */
 // prettier-ignore
@@ -148,6 +156,7 @@ class Header extends React.Component {
                 label="Hi"
                 classes={{
                   label: classes.label,
+                  // root: classes.bottomActionRoot,
                 }}
                 icon={<MusicNote className={classes.icon} />}
               />
@@ -155,12 +164,14 @@ class Header extends React.Component {
                 label="I"
                 classes={{
                   label: classes.label,
+                  // root: classes.bottomActionRoot,
                 }}
                 icon={<MusicNote className={classes.icon} />}
               />
               <BottomNavigationAction
                 label="am"
                 classes={{
+                  // root: classes.bottomActionRoot,
                   label: classes.label,
                 }}
                 icon={<MusicNote className={classes.icon} />}
@@ -168,7 +179,9 @@ class Header extends React.Component {
               <BottomNavigationAction
                 label="Hannah"
                 classes={{
+                  // root: classes.bottomActionRoot,
                   label: classes.label,
+                  // wrapper: classes.bottomActionWrapper,
                 }}
                 icon={<MusicNote className={classes.icon} />}
               />
