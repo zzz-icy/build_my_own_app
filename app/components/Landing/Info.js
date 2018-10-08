@@ -33,6 +33,8 @@ const Info = () => (
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <div style={{ marginBottom: 10 }}>
                     <CloudDownload style={{ marginRight: 15 }} />
+                    <span style={{ margin: 0 }}>Resume: &nbsp;</span>
+
                     <a
                         href="https://drive.google.com/file/d/1aTTZiIcT9O11IAH5ieVmdiLoxotLL6Bd/view?usp=sharing"
                         download
@@ -42,7 +44,7 @@ const Info = () => (
                     </a>
                 </div>
                 <div style={{ marginBottom: 10 }}>
-                    <FaGithub style={{ marginRight: 15 }} />
+                    <FaGithub style={{ marginRight: 15, width: 20, height: 'auto' }} />
                     <span style={{ margin: 0 }}>Github Profile: &nbsp;</span>
                     <a
                         href="https://github.com/zzz-icy"
@@ -53,13 +55,25 @@ const Info = () => (
                 </div>
                 <div style={{ marginBottom: 10 }}>
                     <Web style={{ marginRight: 15 }} />
+                    <span style={{ margin: 0 }}> Node.js Project:  &nbsp;</span>
 
                     <a
                         href="https://mighty-brushlands-59948.herokuapp.com/"
                         style={{ color: 'white' }}
                     >
-                        View my Node.js project - Jotting down your ideas
+                        Jotting down your ideas
                     </a>
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                    <Web style={{ marginRight: 15 }} />
+                    <span style={{ margin: 0 }}>CODEPEN Project: &nbsp;</span>
+
+                    <a
+                        href="https://codepen.io/Zzz-icy/pen/MpMEMd"
+                        style={{ color: 'white' }}
+                    >
+                        Backbone Selection for Wireless Sensor Network:
+                </a>
                 </div>
             </Paper>
         </Grid>
