@@ -81,6 +81,15 @@ const Info = () => (
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <Grid container item sm={12} direction='row' justify='space-between'>
                     <Grid item sm={8}>
+                        <p>Research Assistant(Web, part-time)</p>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <p>09/2018 - Present</p>
+                    </Grid>
+
+                </Grid>
+                <Grid container item sm={12} direction='row' justify='space-between'>
+                    <Grid item sm={8}>
                         <p>Product Development Intern (Front-end/UI)</p>
                     </Grid>
                     <Grid item sm={2}>
@@ -103,21 +112,13 @@ const Info = () => (
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <Grid container item sm={12} direction='row' justify='space-between'>
                     <Grid item sm={8}>
-                        <p>Product Development Intern (Front-end/UI)</p>
-                    </Grid>
-                    <Grid item sm={2}>
-                        <p>01/2018 - 05/2018</p>
-                    </Grid>
-
-                </Grid>
-                <Grid container item sm={12} direction='row' justify='space-between'>
-
-                    <Grid item sm={8}>
                         <p>Master Degree in Computer Science, Southern Methodist University</p>
+                        <p>Dallas, TX</p>
                     </Grid>
                     <Grid item sm={2}>
                         <p>09/2016 - 05/2018</p>
                     </Grid>
+
                 </Grid>
             </Paper>
         </Grid>

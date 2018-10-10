@@ -89,6 +89,7 @@ class LeftDrawer extends React.Component {
         return (
             <Drawer
                 open={this.props.open}
+                onClick={this.props.handleDrawerClose}
             // onClose={this.toggleDrawer('left', false)}
             >
                 <div className={classes.drawerHeader}>
