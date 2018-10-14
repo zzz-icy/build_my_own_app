@@ -32,7 +32,7 @@ function Landing() {
         <h2 className="landing__subtitle">A little bit of info of me.</h2>
       </div>
       <Grid container className="landing__body" spacing={16} direction='row' >
-        <Grid item container xs={12} sm={3} direction='column' alignItems='center'>
+        <Grid item container xs={12} sm={4} md={3} direction='column' alignItems='center'>
           <Paper
             style={{ background: '#333745' }}
             elevation={0}
@@ -50,7 +50,7 @@ function Landing() {
           {/* Take a look at the Indecision Application using the Nav menu&nbsp; <MenuIcon /> */}
         </Grid>
 
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={8} md={9}>
           <Info />
         </Grid>
       </Grid>

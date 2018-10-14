@@ -66,7 +66,7 @@ const Info = () => (
                 </div>
                 <div style={{ marginBottom: 10 }}>
                     <Web style={{ marginRight: 15 }} />
-                    <span style={{ margin: 0 }}>CODEPEN Project: &nbsp;</span>
+                    <span style={{ margin: 0 }}>Codepen Project: &nbsp;</span>
 
                     <a
                         href="https://codepen.io/Zzz-icy/pen/MpMEMd"
@@ -80,30 +80,37 @@ const Info = () => (
         <Grid container item sm={12} direction='column'>
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <Grid container item sm={12} direction='row' justify='space-between'>
-                    <Grid item sm={8}>
+                    <Grid item sm={8} md={8}>
                         <p>Research Assistant(Web, part-time)</p>
                     </Grid>
-                    <Grid item sm={2}>
-                        <p>09/2018 - Present</p>
+                    <Grid item sm={4} md={4} lg={2} justify='center'>
+                        <p style={{ textAlign: 'center' }}>09/2018 - Present</p>
                     </Grid>
 
                 </Grid>
                 <Grid container item sm={12} direction='row' justify='space-between'>
-                    <Grid item sm={8}>
+                    <Grid item sm={8} md={8}>
                         <p>Product Development Intern (Front-end/UI)</p>
                     </Grid>
-                    <Grid item sm={2}>
-                        <p>01/2018 - 05/2018</p>
+                    <Grid item sm={4} md={4} lg={2} justify='center'>
+                        <p style={{ textAlign: 'center' }}>01/2018 - 05/2018</p>
                     </Grid>
 
                 </Grid>
+
+                {/* xs, extra-small: 0px or larger
+                    sm, small: 600px or larger
+                    md, medium: 960px or larger
+                    lg, large: 1280px or larger
+                    xl, extra-large: 1920px or larger */}
+                {/* window.width 1440 */}
                 <Grid container item sm={12} direction='row' justify='space-between'>
 
-                    <Grid item sm={8}>
+                    <Grid item sm={8} md={8}>
                         <p>Master Degree in Computer Science, Southern Methodist University</p>
                     </Grid>
-                    <Grid item sm={2}>
-                        <p>09/2016 - 05/2018</p>
+                    <Grid item sm={4} md={4} lg={2} justify='center'>
+                        <p style={{ textAlign: 'center' }}>09/2016 - 05/2018</p>
                     </Grid>
                 </Grid>
             </Paper>
@@ -111,12 +118,12 @@ const Info = () => (
         <Grid container item sm={12} direction='column'>
             <Paper style={{ background: '#20222b', padding: 20, margin: '0px 10px 0px 10px' }}>
                 <Grid container item sm={12} direction='row' justify='space-between'>
-                    <Grid item sm={8}>
+                    <Grid item sm={8} md={8}>
                         <p>Master Degree in Computer Science, Southern Methodist University</p>
                         <p>Dallas, TX</p>
                     </Grid>
-                    <Grid item sm={2}>
-                        <p>09/2016 - 05/2018</p>
+                    <Grid item sm={4} md={4} lg={2} justify='center'>
+                        <p style={{ textAlign: 'center' }}>09/2016 - 05/2018</p>
                     </Grid>
 
                 </Grid>
