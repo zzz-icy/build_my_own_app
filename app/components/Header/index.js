@@ -116,8 +116,9 @@ class Header extends React.Component {
     // console.log(auth);
     return (
       <div>
-        <AppBar position="static" className={classes.root}>
+        <AppBar position="sticky" className={classes.root}>
           <Toolbar>
+
             <IconButton
               className={classes.menuButton}
               color="inherit"
@@ -131,6 +132,7 @@ class Header extends React.Component {
               handleDrawerClose={this.handleDrawerClose}
               open={this.state.open}
             />
+
             <Typography
               variant="title"
               color="inherit"

@@ -98,11 +98,13 @@ const Info = () => (
 
                 </Grid>
 
-                {/* xs, extra-small: 0px or larger
+                {/* 
+                    xs, extra-small: 0px or larger
                     sm, small: 600px or larger
                     md, medium: 960px or larger
                     lg, large: 1280px or larger
-                    xl, extra-large: 1920px or larger */}
+                    xl, extra-large: 1920px or larger 
+                */}
                 {/* window.width 1440 */}
                 <Grid container item sm={12} direction='row' justify='space-between'>
 
