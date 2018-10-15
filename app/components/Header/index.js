@@ -66,6 +66,10 @@ const styles = {
     width: 34,
     // padding: 0,
   },
+  customWidth: {
+    maxWidth: 220,
+    fontSize: 12,
+  },
 };
 /* eslint-disable indent */
 // prettier-ignore
@@ -112,6 +116,10 @@ class Header extends React.Component {
   render() {
     const { classes } = this.props;
     const { value } = this.state;
+    const tooltipTitle = (<div>
+      <p>If you are not comfortable signing in with your Google Account, use this:
+      <p>hannah.guest12345@gmail.com</p>Guest123!</p>
+    </div>);
     // console.log('inside Header:', this.props);
     // console.log(auth);
     return (
@@ -189,16 +197,22 @@ class Header extends React.Component {
               />
             </BottomNavigation>
 
+            <Tooltip
 
-            <Button
-              // href="http://localhost:3000/auth/google"
-              // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
-              href="/auth/google"
-              color="inherit"
+              title={tooltipTitle}
+              leaveDelay={200}
+              classes={{ tooltip: classes.customWidth }}
             >
-              {this.renderContent()}
-            </Button>
 
+              <Button
+                // href="http://localhost:3000/auth/google"
+                // relative route, the browser will aumatically prepend on the domain, eg. localhost:3000 for dev mode
+                href="/auth/google"
+                color="inherit"
+              >
+                {this.renderContent()}
+              </Button>
+            </Tooltip>
           </Toolbar>
         </AppBar>
       </div>
