@@ -36,7 +36,18 @@
   margin: $m-size 0;
   font-weight: 400;
   font-family: Helvetica, Arial, sans-serif;
+  // color: lighten($purple, 20%);
+  color: lighten($off-white,10%),
+
+}
+
+.landing__link {
+
+  font-size: 1.6rem;
+ font-style: italic;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
   color: lighten($purple, 20%);
-  // color: $purple,
+  // color: lighten($off-white,10%),
 
 }
