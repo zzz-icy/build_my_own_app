@@ -71,11 +71,7 @@ class Info extends React.Component {
                                 Click to view my resume.
                             </a>
                         </div>
-                        <Divider
-                            classes={{
-                                root: classes.divider,
-                            }}
-                        />
+
                         <div style={{ marginBottom: 15, marginTop: 15 }}>
                             <FaGithub style={{ marginRight: 15, width: 20, height: 'auto' }} />
                             <span style={{ margin: 0 }}>Github Profile: &nbsp;</span>
@@ -86,11 +82,7 @@ class Info extends React.Component {
                                 https://github.com/zzz-icy
                             </a>
                         </div>
-                        <Divider
-                            classes={{
-                                root: classes.divider,
-                            }}
-                        />
+
                         <div style={{ marginBottom: 15, marginTop: 15 }}>
                             <Web style={{ marginRight: 15 }} />
                             <span style={{ margin: 0 }}> Node.js Project:  &nbsp;</span>
@@ -102,11 +94,7 @@ class Info extends React.Component {
                                 Jotting down your ideas
                             </a>
                         </div>
-                        <Divider
-                            classes={{
-                                root: classes.divider,
-                            }}
-                        />
+
                         <div style={{ marginBottom: 15, marginTop: 15 }}>
                             <Web style={{ marginRight: 15 }} />
                             <span style={{ margin: 0 }}>Codepen Project: &nbsp;</span>
@@ -129,12 +117,12 @@ class Info extends React.Component {
                             <Grid item sm={4} md={4} lg={2} justify='center'>
                                 <p style={{ textAlign: 'center' }}>09/2018 - Present</p>
                             </Grid>
-                            <Divider
-                                classes={{
-                                    root: classes.divider,
-                                }}
-                            />
                         </Grid>
+                        <Divider
+                            classes={{
+                                root: classes.divider,
+                            }}
+                        />
                         <Grid container item sm={12} direction='row' justify='space-between'>
                             <Grid item sm={8} md={8}>
                                 <p>Product Development Intern (Front-end/UI)</p>
@@ -178,7 +166,6 @@ class Info extends React.Component {
                             <Grid item sm={4} md={4} lg={2} justify='center'>
                                 <p style={{ textAlign: 'center' }}>09/2016 - 05/2018</p>
                             </Grid>
-
                         </Grid>
                     </Paper>
                 </Grid>
