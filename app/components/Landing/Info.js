@@ -54,6 +54,9 @@ class Info extends React.Component {
                         <p>
                             I will be working on OPT EAD starting on July 19th, 2018
                 </p>
+                        <p>
+                            Willing to Relocate.
+                </p>
                     </Paper>
                 </Grid>
                 <Grid item sm={12} >
