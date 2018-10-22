@@ -30,6 +30,7 @@ function Landing() {
       <div>
         <h1 className="landing__title">Welcome</h1>
         <h2 className="landing__subtitle">A little bit of info of me.</h2>
+        {/* lalalalal */}
       </div>
       <Grid container className="landing__body" spacing={16} direction='row' >
         <Grid item container xs={12} sm={4} md={3} direction='column' alignItems='center'>
