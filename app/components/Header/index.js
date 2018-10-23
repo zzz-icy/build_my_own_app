@@ -116,10 +116,10 @@ class Header extends React.Component {
   render() {
     const { classes } = this.props;
     const { value } = this.state;
-    const tooltipTitle = (<div>
+    const tooltipTitle = (!this.props.auth ? <div>
       <p>If you are not comfortable signing in with your Google Account, use this:
       <p>hannah.guest12345@gmail.com</p>Guest123!</p>
-    </div>);
+    </div> : <p>Click to logout</p>);
     // console.log('inside Header:', this.props);
     // console.log(auth);
     return (
